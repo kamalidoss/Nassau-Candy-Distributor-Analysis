@@ -11,6 +11,9 @@ st.subheader("Factory-to-Customer Shipping Route Efficiency Analysis")
 
 df = pd.read_csv("Raw Dataset.csv")
 
+st.write("Columns:", df.columns.tolist())
+st.stop()
+
 # DATA CLEANING & FEATURE ENGINEERING
 
 # Convert Dates
