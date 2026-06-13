@@ -14,8 +14,8 @@ df = pd.read_csv("Raw Dataset.csv")
 # DATA CLEANING & FEATURE ENGINEERING
 
 # Convert Dates
-df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
-df['Ship Date'] = pd.to_datetime(df['Ship Date'], format='%d-%m-%Y')
+df['Order Date'] = pd.to_datetime(df['Order Date'], errors='coerce')
+df['Ship Date'] = pd.to_datetime(df['Ship Date'], errors='coerce')
 
 # Create Lead Time
 df['Lead_Time'] = (
