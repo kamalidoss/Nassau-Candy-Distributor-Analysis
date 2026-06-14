@@ -11,11 +11,11 @@ st.subheader("Factory-to-Customer Shipping Route Efficiency Analysis")
 
 df = pd.read_csv("Raw Dataset.csv")
 
+
 # DATA CLEANING & FEATURE ENGINEERING
 
-# Convert Dates
-df['Order Date'] = pd.to_datetime(df['Order Date'], errors='coerce')
-df['Ship Date'] = pd.to_datetime(df['Ship Date'], errors='coerce')
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+df['Ship Date'] = pd.to_datetime(df['Ship Date'])
 
 # Create Lead Time
 df['Lead_Time'] = (
@@ -60,7 +60,9 @@ col2.metric(
     "Average Lead Time",
     f"{df['Lead_Time'].mean():.2f} Days"
 )
+df = pd.read_csv("Raw Dataset.csv")
 
+df['Sales'] = pd.to_numeric(df['Sales'], errors='coerce')
 col3.metric(
     "Total Sales",
     f"${df['Sales'].sum():,.0f}"
